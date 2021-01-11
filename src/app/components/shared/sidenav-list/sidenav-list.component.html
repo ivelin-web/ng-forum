@@ -1,0 +1,41 @@
+<mat-nav-list>
+    <ng-template [ngIf]="isAuth">
+        <a [disabled]="true" class="user" mat-list-item>
+            <mat-icon class="icon">perm_identity</mat-icon>
+            <span *ngIf="currentUser">{{ currentUser.username }}</span>
+        </a>
+        <hr />
+    </ng-template>
+    <a mat-list-item routerLink="/posts" (click)="onSidenavClose()">
+        <mat-icon class="icon">home</mat-icon>
+        Posts
+    </a>
+    <a
+        *ngIf="isAuth"
+        mat-list-item
+        routerLink="/posts/create"
+        (click)="onSidenavClose()"
+    >
+        <mat-icon class="icon">post_add</mat-icon>
+        Create Post
+    </a>
+    <a mat-list-item routerLink="/about" (click)="onSidenavClose()">
+        <mat-icon class="icon">info</mat-icon>
+        About
+    </a>
+    <hr />
+    <ng-template [ngIf]="!isAuth">
+        <a mat-list-item (click)="onSidenavClose(); openLoginDialog()">
+            <mat-icon class="icon">login</mat-icon>
+            Login
+        </a>
+        <a mat-list-item (click)="onSidenavClose(); openRegisterDialog()">
+            <mat-icon class="icon">login</mat-icon>
+            Register
+        </a>
+    </ng-template>
+    <a *ngIf="isAuth" mat-list-item (click)="onSidenavClose(); logout()">
+        <mat-icon class="icon">login</mat-icon>
+        Logout
+    </a>
+</mat-nav-list>

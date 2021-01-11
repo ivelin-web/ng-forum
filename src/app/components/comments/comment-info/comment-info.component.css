@@ -1,0 +1,10 @@
+h3 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.date,
+.body {
+    color: #666;
+}

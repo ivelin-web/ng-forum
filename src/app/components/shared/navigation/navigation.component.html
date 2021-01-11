@@ -1,0 +1,90 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs class="menu-icon">
+        <button mat-icon-button (click)="sidenavToggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <button
+        routerLink="/home"
+        mat-button
+        fxLayoutAlign="default center"
+        class="logo"
+    >
+        <mat-icon class="icon">forum</mat-icon>
+        <a>Forum</a>
+    </button>
+    <div fxFlex fxLayoutAlign="start center" fxHide.xs>
+        <div fxFlex fxLayoutAlign="space-between center">
+            <ul fxLayout fxLayoutGap="1.5rem" class="nav-items">
+                <li>
+                    <button
+                        (click)="onClick()"
+                        mat-button
+                        routerLink="/posts"
+                        class="link-item"
+                    >
+                        Posts
+                    </button>
+                </li>
+                <li *ngIf="isAuth">
+                    <button
+                        mat-button
+                        routerLink="/posts/create"
+                        class="link-item"
+                    >
+                        Create Post
+                    </button>
+                </li>
+                <li>
+                    <button mat-button routerLink="/about" class="link-item">
+                        About
+                    </button>
+                </li>
+            </ul>
+            <ul fxLayout fxLayoutGap="1.5rem" class="nav-items">
+                <ng-template [ngIf]="!isAuth">
+                    <li>
+                        <button
+                            (click)="openLoginDialog()"
+                            mat-button
+                            class="link-item"
+                        >
+                            Login
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            (click)="openRegisterDialog()"
+                            mat-button
+                            class="link-item"
+                        >
+                            Register
+                        </button>
+                    </li>
+                </ng-template>
+                <ng-template [ngIf]="isAuth">
+                    <li>
+                        <button mat-button>
+                            <div
+                                class="user"
+                                fxLayout="row"
+                                fxLayoutAlign="default center"
+                                fxLayoutGap="0.5rem"
+                            >
+                                <mat-icon>perm_identity</mat-icon>
+                                <span *ngIf="currentUser">{{
+                                    currentUser.username
+                                }}</span>
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button (click)="logout()" mat-button class="link-item">
+                            Logout
+                        </button>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</mat-toolbar>

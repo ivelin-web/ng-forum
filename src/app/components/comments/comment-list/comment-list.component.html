@@ -1,0 +1,11 @@
+<section
+    class="comment"
+    fxLayout="column"
+    fxLayoutAlign="default left"
+    fxLayoutGap="1rem"
+>
+    <app-comment-info
+        *ngFor="let comment of comments | async"
+        [comment]="comment"
+    ></app-comment-info>
+</section>

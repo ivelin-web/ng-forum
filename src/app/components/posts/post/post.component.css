@@ -1,0 +1,42 @@
+.post .title {
+    color: #dc255b;
+    display: flex;
+    align-items: center;
+}
+
+.post .title mat-icon {
+    margin-right: 0.3rem;
+}
+
+.post h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.post .description {
+    color: #999;
+    max-width: 75%;
+}
+
+.post .time {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.post .time mat-icon {
+    margin-right: 0.3rem;
+}
+
+.post a {
+    display: block;
+    border: none;
+    outline: none;
+    color: #3f51b5;
+    text-decoration: none;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}

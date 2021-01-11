@@ -1,0 +1,23 @@
+.container {
+    padding: 3% 5%;
+    min-height: 81vh;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.info button {
+    margin-right: 0.5rem;
+}
+
+.info p {
+    margin: 0;
+}
+
+.comments {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: #666;
+}

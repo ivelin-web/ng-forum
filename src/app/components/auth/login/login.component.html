@@ -1,0 +1,32 @@
+<section class="container">
+    <h2>Login</h2>
+    <form
+        #form="ngForm"
+        fxLayout="column"
+        fxLayoutAlign="default center"
+        fxLayoutGap="1rem"
+        (ngSubmit)="login(form)"
+    >
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input name="email" #email="ngModel" ngModel matInput required />
+            <mat-error>You must enter your email!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+                type="password"
+                name="password"
+                #password="ngModel"
+                ngModel
+                matInput
+                required
+            />
+            <mat-error>You must enter your password!</mat-error>
+        </mat-form-field>
+        <div class="buttons" fxFlexAlign="row" fxLayoutGap="1.5rem">
+            <button mat-dialog-close="true" mat-raised-button>Cancel</button>
+            <button [disabled]="form.invalid" mat-raised-button>Login</button>
+        </div>
+    </form>
+</section>

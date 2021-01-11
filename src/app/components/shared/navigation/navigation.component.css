@@ -1,0 +1,59 @@
+.logo {
+    margin-right: 1rem;
+}
+
+.nav-items {
+    list-style-type: none;
+}
+
+button,
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: 2.5rem;
+}
+
+.link-item {
+    display: block;
+}
+
+.logo,
+.link-item,
+button,
+a {
+    transition: color 0.3s ease;
+}
+
+.logo:hover,
+.link-item:hover,
+button:hover,
+a:hover {
+    color: #ffa500;
+}
+
+.logo:hover button,
+.logo:hover a {
+    color: #ffa500;
+}
+
+.icon {
+    transform: translate(1px, -6px);
+}
+
+.logo {
+    margin-right: 1.5rem !important;
+}
+
+.user {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.user:hover {
+    color: #ffa500;
+}

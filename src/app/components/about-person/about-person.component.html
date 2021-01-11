@@ -1,0 +1,46 @@
+<div class="container" fxLayout="column" fxLayoutGap="2rem">
+    <ng-template [ngIf]="aboutPerson">
+        <div class="image-wrapper">
+            <img src="{{ aboutPerson.imageUrl }}" alt="Person image" />
+            <div
+                class="social-icons"
+                fxLayout="row"
+                fxLayoutAlign="space-between"
+            >
+                <button mat-icon-button>
+                    <mat-icon>facebook</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>share</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>pages</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>sports_basketball</mat-icon>
+                </button>
+            </div>
+        </div>
+        <mat-card>
+            <div class="header">
+                <h2>{{ aboutPerson.author }}</h2>
+            </div>
+            <div class="body">
+                <h3>{{ aboutPerson.position }}</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Quasi minima dolore optio, amet ad aperiam provident tempora
+                    animi vero iure distinctio esse eos cupiditate, magnam
+                    quidem illum maiores. Inventore, animi! Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Ipsam iusto modi a
+                    optio quo sunt sed consequatur? Quam quis amet consectetur
+                    beatae autem sed praesentium. Nemo, consequuntur? Quod,
+                    reprehenderit enim.
+                </p>
+            </div>
+        </mat-card>
+    </ng-template>
+    <ng-template [ngIf]="!aboutPerson">
+        <h2 class="invalid" fxLayoutAlign="center">Invalid Person id!</h2>
+    </ng-template>
+</div>

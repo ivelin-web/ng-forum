@@ -1,0 +1,29 @@
+<section
+    class="container"
+    fxLayout="column"
+    fxLayoutAlign="default center"
+    fxLayoutGap="2rem"
+>
+    <h2>Create Comment</h2>
+    <form
+        (ngSubmit)="createComment(form)"
+        #form="ngForm"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+    >
+        <mat-form-field>
+            <textarea
+                rows="20"
+                name="body"
+                ngModel
+                matInput
+                required
+            ></textarea>
+            <mat-hint *ngIf="!form.touched">Enter your comment</mat-hint>
+            <mat-error>Please enter some comment!</mat-error>
+        </mat-form-field>
+        <button [disabled]="form.invalid" mat-raised-button color="primary">
+            Create Comment
+        </button>
+    </form>
+</section>

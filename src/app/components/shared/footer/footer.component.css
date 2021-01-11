@@ -1,0 +1,26 @@
+ul {
+    background: #3f51b5;
+    padding: 1rem;
+}
+
+p {
+    color: #fff;
+    margin-bottom: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+p:hover {
+    color: #333;
+    transform: translateY(-5px);
+}
+
+button {
+    transform: scale(1.5);
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 2rem;
+}

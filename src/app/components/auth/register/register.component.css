@@ -1,0 +1,7 @@
+mat-form-field {
+    width: 80%;
+}
+
+mat-error {
+    font-size: 0.8rem;
+}

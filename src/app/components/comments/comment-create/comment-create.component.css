@@ -1,0 +1,30 @@
+.container {
+    padding: 3% 5%;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+}
+
+form,
+mat-form-field,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    resize: none !important;
+}
+
+mat-hint,
+mat-error {
+    font-size: 1.4rem;
+}
+
+button {
+    margin-top: 2rem;
+    width: 200px;
+}

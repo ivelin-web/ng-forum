@@ -1,0 +1,11 @@
+<mat-card *ngIf="comment">
+    <h3>{{ comment.author }}</h3>
+    <p class="date">
+        {{ +comment.createdOn["seconds"] * 1000 | date: "short" }}
+    </p>
+    <p class="body">{{ comment.body }}</p>
+    <div class="buttons" fxLayoutGap="1rem">
+        <button mat-raised-button>Edit comment</button>
+        <button mat-raised-button>Delete comment</button>
+    </div>
+</mat-card>

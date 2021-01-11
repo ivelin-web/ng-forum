@@ -1,0 +1,50 @@
+<section
+    class="container"
+    fxLayout="column"
+    fxLayoutAlign="default center"
+    fxLayoutGap="2rem"
+>
+    <h2>Create Post</h2>
+    <form
+        (ngSubmit)="createPost(form)"
+        #form="ngForm"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="1rem"
+    >
+        <mat-form-field>
+            <mat-label>Select a Category</mat-label>
+            <mat-select ngModel name="category" required>
+                <mat-option
+                    *ngFor="let category of categories"
+                    value="{{ category }}"
+                    >{{ category }}</mat-option
+                >
+            </mat-select>
+            <mat-hint>Please select category</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input #name="ngModel" name="title" ngModel matInput required />
+            <mat-hint *ngIf="!name.touched">Enter title</mat-hint>
+            <mat-error>You must enter title!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea
+                #description="ngModel"
+                rows="20"
+                name="description"
+                ngModel
+                matInput
+                required
+            ></textarea>
+            <mat-hint *ngIf="!description.touched"
+                >Enter your description</mat-hint
+            >
+            <mat-error>Please enter your description!</mat-error>
+        </mat-form-field>
+        <button [disabled]="form.invalid" mat-raised-button color="primary">
+            Create Post
+        </button>
+    </form>
+</section>

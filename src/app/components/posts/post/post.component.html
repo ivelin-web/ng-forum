@@ -1,0 +1,32 @@
+<mat-card>
+    <div
+        class="post"
+        fxLayout="column"
+        fxLayoutAlign="default start"
+        fxLayoutGap="1rem"
+    >
+        <span class="title">
+            <mat-icon *ngIf="post.category === 'Game Theory'">games</mat-icon>
+            <mat-icon *ngIf="post.category === 'Basketball'"
+                >sports_baseball</mat-icon
+            >
+            <mat-icon *ngIf="post.category === 'Education'">school</mat-icon>
+            <mat-icon *ngIf="post.category === 'Marketing'"
+                >shopping_cart</mat-icon
+            >
+            {{ post.category }}
+        </span>
+        <h3>{{ post.title }}</h3>
+        <p class="description">{{ post.description | slice: 0:70 }}...</p>
+        <span class="time">
+            <mat-icon>access_time</mat-icon>
+            {{
+                +post.createdOn["seconds"] * 1000
+                    | date: "dd/MM/yy г. hh:mm:ss ч."
+            }}
+        </span>
+        <a [routerLink]="['/posts/details', this.post.id]" color="primary"
+            >Read more</a
+        >
+    </div>
+</mat-card>

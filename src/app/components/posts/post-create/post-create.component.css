@@ -1,0 +1,25 @@
+.container {
+    padding: 3% 5%;
+    min-height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+form,
+mat-form-field {
+    width: 85%;
+}
+
+mat-label {
+    font-size: 1.2rem;
+}
+
+mat-hint,
+mat-error {
+    font-size: 0.8rem;
+}

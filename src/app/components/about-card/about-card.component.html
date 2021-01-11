@@ -1,0 +1,31 @@
+<div class="card-image-wrapper">
+    <img src="{{ aboutCard.imageUrl }}" alt="Profile card image" />
+</div>
+<div class="card-body" fxLayout="column" fxLayoutGap="1rem">
+    <div class="card-title">
+        <h4>{{ aboutCard.author }}</h4>
+    </div>
+    <div class="skill">
+        <p>{{ aboutCard.position }}</p>
+    </div>
+    <div class="position">
+        <p>{{ aboutCard.graduated }}</p>
+    </div>
+    <div class="social">
+        <button mat-icon-button>
+            <mat-icon>facebook</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>share</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>pages</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>sports_basketball</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="card-footer">
+    <a (click)="onClick()" class="btn">Contact</a>
+</div>

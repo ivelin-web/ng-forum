@@ -1,0 +1,16 @@
+<div
+    class="cards"
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="space-between"
+    fxLayoutGap.lt-md="3rem"
+>
+    <ng-container *ngFor="let aboutCard of aboutCards">
+        <app-about-card
+            class="card"
+            fxFlex="25"
+            fxLayout="column"
+            [aboutCard]="aboutCard"
+        ></app-about-card>
+    </ng-container>
+</div>

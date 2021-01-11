@@ -1,0 +1,88 @@
+<section class="container">
+    <h2>Register</h2>
+    <form
+        #form="ngForm"
+        fxLayout="column"
+        fxLayoutAlign="default center"
+        fxLayoutGap="1rem"
+        (ngSubmit)="register(form)"
+    >
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input
+                name="username"
+                #username="ngModel"
+                ngModel
+                matInput
+                required
+                minlength="3"
+            />
+            <mat-error *ngIf="username.errors?.required"
+                >This field is required!</mat-error
+            >
+            <mat-error *ngIf="username.errors?.minlength"
+                >Username must be at least 3 letters!</mat-error
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input
+                name="email"
+                #email="ngModel"
+                ngModel
+                matInput
+                required
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+            <mat-error *ngIf="email.errors?.required"
+                >This field is required!</mat-error
+            >
+            <mat-error *ngIf="email.errors?.pattern"
+                >Email must be valid!</mat-error
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+                type="password"
+                name="password"
+                #password="ngModel"
+                ngModel
+                matInput
+                required
+                minlength="6"
+            />
+            <mat-error *ngIf="password.errors?.required"
+                >This field is required!</mat-error
+            >
+            <mat-error *ngIf="password.errors?.minlength"
+                >Password must be at least 6 symbols!</mat-error
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input
+                type="password"
+                name="confirmPassword"
+                ngValidateEqual="password"
+                #confirmPassword="ngModel"
+                ngModel
+                matInput
+                required
+            />
+            <mat-error *ngIf="confirmPassword.errors?.required"
+                >This field is required!</mat-error
+            >
+            <mat-error
+                *ngIf="confirmPassword.hasError('notEqual') && password.valid"
+                >Passwords not match!</mat-error
+            >
+        </mat-form-field>
+        <div class="buttons" fxFlexAlign="row" fxLayoutGap="1.5rem">
+            <button mat-dialog-close="true" mat-raised-button>Cancel</button>
+            <button [disabled]="form.invalid" mat-raised-button>
+                Register
+            </button>
+        </div>
+    </form>
+</section>

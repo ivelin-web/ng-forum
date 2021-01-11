@@ -1,0 +1,17 @@
+.icon {
+    margin-right: 0.5rem;
+}
+
+a:hover {
+    color: #ffa500;
+}
+
+.user {
+    background: #333;
+    color: #fff;
+    pointer-events: none;
+}
+
+hr {
+    border-top: 2px solid #333;
+}

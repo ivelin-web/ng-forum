@@ -1,0 +1,66 @@
+<section
+    class="container"
+    fxLayout
+    fxLayout.lt-md="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="1rem"
+>
+    <div class="slider" fxFlex="65" fxFlex.lt-md="100">
+        <mat-carousel
+            timings="250ms ease-in"
+            [autoplay]="true"
+            interval="5000"
+            color="primary"
+            maxWidth="auto"
+            proportion="50"
+            slides="2"
+            [loop]="true"
+            [hideArrows]="false"
+            [hideIndicators]="false"
+            [useKeyboard]="true"
+            [useMouseWheel]="false"
+            orientation="ltr"
+        >
+            <mat-carousel-slide
+                #matCarouselSlide
+                *ngFor="let slide of slides"
+                [image]="slide.image"
+                overlayColor="#00000040"
+                [hideOverlay]="false"
+            >
+                <h3>Welcome To Forum</h3>
+            </mat-carousel-slide>
+        </mat-carousel>
+    </div>
+    <div class="categories" fxFlex="35" fxFlex.lt-lg="40" fxFlex.lt-md="100">
+        <mat-card>
+            <h2>Categories</h2>
+            <div class="inner">
+                <div class="category">
+                    <button (click)="onClick('Basketball')" mat-raised-button>
+                        Basketball
+                    </button>
+                </div>
+                <div class="category">
+                    <button (click)="onClick('Game Theory')" mat-raised-button>
+                        Game Theory
+                    </button>
+                </div>
+                <div class="category">
+                    <button (click)="onClick('Education')" mat-raised-button>
+                        Education
+                    </button>
+                </div>
+                <div class="category">
+                    <button (click)="onClick('Marketing')" mat-raised-button>
+                        Marketing
+                    </button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</section>
+<section class="posts container">
+    <h2>Latest Posts</h2>
+    <app-post-list></app-post-list>
+</section>

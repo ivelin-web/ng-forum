@@ -1,0 +1,54 @@
+<section class="container">
+    <div
+        *ngIf="post"
+        fxLayout="column"
+        fxLayoutAlign="default start"
+        fxLayoutGap="1rem"
+    >
+        <h2>{{ post.title }}</h2>
+        <div
+            class="info"
+            fxLayout="row"
+            fxLayoutAlign="default center"
+            fxLayoutGap="1rem"
+        >
+            <button
+                (click)="onClick()"
+                routerLink="/posts"
+                mat-raised-button
+                color="primary"
+            >
+                {{ post.category }}
+            </button>
+            <p>
+                {{
+                    +post.createdOn["seconds"] * 1000
+                        | date: "dd/MM/yy г. hh:mm:ss ч."
+                }}
+            </p>
+            <span fxFlex fxLayoutAlign="defualt center">
+                <mat-icon>comment</mat-icon>
+                <p>{{ commentsLength }}</p>
+            </span>
+        </div>
+        <div class="description">
+            <p>{{ post.description }}</p>
+        </div>
+        <div class="buttons-container" fxLayout="row" fxLayoutGap="1rem">
+            <button [routerLink]="['/comments/create', id]" mat-raised-button>
+                Add Comment
+            </button>
+            <button
+                *ngIf="currentUser?.username === post.author"
+                (click)="deletePost()"
+                mat-raised-button
+            >
+                Delete Post
+            </button>
+        </div>
+        <div class="comments">
+            <p>{{ commentsLength }} Comments</p>
+        </div>
+        <app-comment-list></app-comment-list>
+    </div>
+</section>
