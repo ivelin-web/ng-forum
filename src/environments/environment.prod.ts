@@ -1,6 +1,7 @@
 export const environment = {
-  production: true,
-      firebase: {
+    production: true,
+    aboutUsImageUrl: 'assets/about-us.svg',
+    firebase: {
         apiKey: 'AIzaSyByAX7bOkj9wEDxgXn2Bu3YR7cKy2Qvs3k',
         authDomain: 'ng-forum-21.firebaseapp.com',
         projectId: 'ng-forum-21',
