@@ -1,5 +1,9 @@
 import { Component, isDevMode, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+
+const ABOUT_US_URL = {
+    prod: 'assets/about-us.svg',
+    dev: '..//..//..//assets/about-us.svg',
+};
 
 @Component({
     selector: 'app-about',
@@ -12,6 +16,6 @@ export class AboutComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        this.aboutUsImageUrl = environment.aboutUsImageUrl;
+        this.aboutUsImageUrl = isDevMode ? ABOUT_US_URL.dev : ABOUT_US_URL.prod;
     }
 }
