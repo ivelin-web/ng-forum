@@ -1,0 +1,19 @@
+<form #form="ngForm">
+    <mat-form-field appearance="fill">
+        <mat-label>Type Text</mat-label>
+        <textarea
+            [(ngModel)]="commentText"
+            name="body"
+            rows="5"
+            matInput
+        ></textarea>
+    </mat-form-field>
+    <span fxLayout="row" fxLayoutGap="1rem">
+        <button (click)="cancelDialog()" mat-raised-button color="primary">
+            Cancel
+        </button>
+        <button (click)="editComment()" mat-raised-button color="primary">
+            Edit
+        </button>
+    </span>
+</form>

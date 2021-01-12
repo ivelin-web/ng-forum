@@ -31,6 +31,7 @@ import { PostService } from './core/services/post.service';
 import { ToastrModule } from 'ngx-toastr';
 import { CommentService } from './core/services/comment.service';
 import { CommentListComponent } from './components/comments/comment-list/comment-list.component';
+import { CommentEditComponent } from './components/comments/comment-edit/comment-edit.component';
 
 @NgModule({
     declarations: [
@@ -50,6 +51,7 @@ import { CommentListComponent } from './components/comments/comment-list/comment
         AboutCardListComponent,
         AboutPersonComponent,
         CommentListComponent,
+        CommentEditComponent,
     ],
     imports: [
         BrowserModule,

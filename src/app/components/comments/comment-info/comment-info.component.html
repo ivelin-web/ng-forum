@@ -3,9 +3,16 @@
     <p class="date">
         {{ +comment.createdOn["seconds"] * 1000 | date: "short" }}
     </p>
+
     <p class="body">{{ comment.body }}</p>
     <div class="buttons" fxLayoutGap="1rem">
-        <button mat-raised-button>Edit comment</button>
-        <button mat-raised-button>Delete comment</button>
+        <ng-template [ngIf]="currentUser?.username === comment.author">
+            <button (click)="editComment()" mat-raised-button>
+                Edit comment
+            </button>
+            <button (click)="deleteComment()" mat-raised-button>
+                Delete comment
+            </button>
+        </ng-template>
     </div>
 </mat-card>

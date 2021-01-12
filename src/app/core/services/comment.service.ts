@@ -4,6 +4,7 @@ import {
     AngularFirestoreCollection,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { IComment } from 'src/app/components/shared/models/comment';
 
 @Injectable()
@@ -15,7 +16,17 @@ export class CommentService {
             .collection<IComment>('comments', (ref) =>
                 ref.where('postId', '==', postId)
             )
-            .valueChanges();
+            .snapshotChanges()
+            .pipe(
+                map((actions) => {
+                    return actions.map((item) => {
+                        return {
+                            ...item.payload.doc.data(),
+                            id: item.payload.doc.id,
+                        };
+                    });
+                })
+            );
     }
 
     createComment(data: IComment) {
