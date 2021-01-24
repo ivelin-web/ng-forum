@@ -32,6 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommentService } from './core/services/comment.service';
 import { CommentListComponent } from './components/comments/comment-list/comment-list.component';
 import { CommentEditComponent } from './components/comments/comment-edit/comment-edit.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 @NgModule({
     declarations: [
@@ -67,7 +68,7 @@ import { CommentEditComponent } from './components/comments/comment-edit/comment
         ValidateEqualModule,
         ToastrModule.forRoot(),
     ],
-    providers: [AuthService, PostService, CommentService],
+    providers: [AuthService, PostService, CommentService, AuthGuard],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

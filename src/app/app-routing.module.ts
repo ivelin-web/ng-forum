@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AllPostsComponent } from './components/posts/all-posts/all-posts.component';
 import { PostCreateComponent } from './components/posts/post-create/post-create.component';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
     {
@@ -33,6 +34,7 @@ const routes: Routes = [
     {
         path: 'posts/create',
         component: PostCreateComponent,
+        canActivate: [AuthGuard],
     },
     {
         path: 'posts/details/:id',
